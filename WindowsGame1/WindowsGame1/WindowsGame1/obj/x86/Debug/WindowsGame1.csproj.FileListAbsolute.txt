@@ -1,0 +1,12 @@
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.csprojResolveAssemblyReference.cache
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
+c:\users\student\documents\visual studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIFont.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\playerShip.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\shot.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\background.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroid.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\dest.xnb

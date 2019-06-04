@@ -1,0 +1,3 @@
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\AdastraContent.contentprojResolveAssemblyReference.cache
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\AdastraContent.contentprojResolveAssemblyReference.cache
+E:\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\AdastraContent.contentprojResolveAssemblyReference.cache

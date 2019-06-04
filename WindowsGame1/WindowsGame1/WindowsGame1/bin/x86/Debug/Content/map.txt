@@ -1,0 +1,96 @@
+// Spawn area.
+Asteroid 100 300
+Asteroid 400 600
+Asteroid 1400 300
+Asteroid 800 1300
+Asteroid 850 200
+Enemy LightCruiser 500 100
+Enemy LightCruiser 1400 500
+Enemy LightCorvette 400 -600
+
+// Random asteroids around the map.
+Asteroid 4800 -3200
+Asteroid 5600 1600
+Asteroid -400 3500
+Asteroid -4800 2400
+Asteroid -2400 -800
+
+// Asteroid belt. So.. many.. asteroids...
+Asteroid 6400 1000
+Asteroid 6550 950
+Asteroid 6650 950
+Asteroid 6900 900
+Asteroid 7100 950
+Asteroid 6200 1000
+Asteroid 6000 1100
+Asteroid 5700 1300
+Asteroid 5500 1500
+Asteroid 5300 1700
+Asteroid 5200 2000
+Asteroid 5200 2200
+Asteroid 5000 2200
+Asteroid 5000 2100
+Asteroid 4900 2200
+Asteroid 4900 2500
+Asteroid 4700 2300
+Asteroid 4800 2500
+Asteroid 4900 2400
+Asteroid 4900 2600
+Asteroid 4800 2700
+Asteroid 5000 2800
+Asteroid 4900 2850
+Asteroid 5000 2950
+Asteroid 5100 3000
+Asteroid 5200 3200
+Asteroid 4900 3300
+Asteroid 4800 3400
+Asteroid 4800 3550
+Asteroid 4700 3600
+Asteroid 4500 3700
+Asteroid 4400 3700
+Asteroid 4300 3600
+Asteroid 4100 3650
+Asteroid 4100 3600
+Asteroid 4000 3500
+Asteroid 3800 3500
+Asteroid 3700 3600
+Asteroid 3700 3700
+Asteroid 3800 3800
+Asteroid 3700 3900
+Asteroid 3600 4050
+Asteroid 3800 4100
+Asteroid 3700 4200
+Asteroid 3600 4200
+Asteroid 3550 4300
+Asteroid 3400 4400
+Asteroid 3500 4500
+Asteroid 3400 4700
+Asteroid 3500 4800
+Asteroid 3300 5000
+Asteroid 3350 5100
+Asteroid 3300 5300
+Asteroid 3400 5400
+Asteroid 3200 5500
+Asteroid 3250 5700
+Enemy LightCorvette 5700 1100
+Enemy LightCruiser 5500 1300
+Enemy LightCruiser 5900 1000
+Enemy LightFrigate 5600 1200
+Enemy LightFrigate 5100 2500
+Enemy LightCorvette 4600 3400
+Enemy LightCruiser 3600 4400 
+
+// The planet in the top right.
+Planet 6400 -4000
+
+// The station in the bottom left.
+Station -6000 3500
+
+// The boss area.
+Boss -6000 -4000
+Asteroid -6000 -3700
+Asteroid -6200 -3950
+Asteroid -6000 -4300
+Asteroid -5700 -4000
+Asteroid -5800 -4100
+Asteroid -5600 -4300

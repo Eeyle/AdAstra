@@ -1,0 +1,94 @@
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIFont.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\shot.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\background.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroid.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\dest.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroidDestroyed.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIHealth.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCruiser.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCorvette.xnb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.exe
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.pdb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.exe
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.pdb
+C:\Users\Student\Documents\Visual Studio 2010\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIShipName.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIFont.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\shot.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\background.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCruiser.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroid.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\dest.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroidDestroyed.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIHealth.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCorvette.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIShipName.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.exe
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.pdb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.csprojResolveAssemblyReference.cache
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.exe
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.pdb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\map.txt
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIHealthBack.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\planet.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightFrigate.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\boss.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\missile.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\station.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\mapBackground.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\playerMapPos.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\storeBackground.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\button.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\buttonBought.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion2.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion3.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion4.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion5.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion6.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion7.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion8.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion1.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\SpecialFont.xnb
+C:\Users\Student\Desktop\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\pauseScreen.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIFont.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\SpecialFont.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\shot.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\background.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCruiser.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroid.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\dest.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\asteroidDestroyed.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIHealth.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightCorvette.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIShipName.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\UIHealthBack.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\planet.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\lightFrigate.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\boss.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\missile.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\station.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\mapBackground.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\playerMapPos.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\storeBackground.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\button.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\buttonBought.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\pauseScreen.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion1.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion2.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion3.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion4.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion5.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion6.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion7.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\explosion\explosion8.xnb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\map.txt
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.exe
+E:\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Adastra.pdb
+E:\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.csprojResolveAssemblyReference.cache
+E:\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.exe
+E:\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Adastra.pdb
