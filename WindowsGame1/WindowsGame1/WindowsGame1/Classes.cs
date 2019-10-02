@@ -68,6 +68,11 @@ namespace Adastra
         public int money { get; set; }
 
         /// <summary>
+        /// The amount of time before the player can fire their next shot.
+        /// </summary>
+        public float cooldown { get; set; }
+
+        /// <summary>
         /// Constructor for the player.
         /// </summary>
         /// <param name="ship">The ship to start the player off in.</param>
@@ -80,6 +85,7 @@ namespace Adastra
             this.ship = ship;
             this.health = ship.health;
             this.money = 0;
+            this.cooldown = 0f;
         }
     }
 
@@ -281,13 +287,18 @@ namespace Adastra
         public static Vector2 origin = new Vector2(Adastra.shotImage.Width / 2, Adastra.shotImage.Height / 2);
 
         /// <summary>
+        /// Whether or not the player fired the shot. The player can't collide with their own shots.
+        /// </summary>
+        public bool playerShot { get; set; }
+
+        /// <summary>
         /// Constructor of the shots that the player fires.
         /// </summary>
         /// <param name="image">Image that the shots take on.</param>
         /// <param name="pos">Position of the shot.</param>
         /// <param name="origin">Place that the shots rotate around.</param>
         /// <param name="angle">Angle of the shots.</param>
-        public Shot(Vector2 pos, float angle)
+        public Shot(Vector2 pos, float angle, bool playerShot)
         {
             base.Init(
                 Adastra.shotImage, 
@@ -297,7 +308,8 @@ namespace Adastra
                 0, 0, 0, 100, 
                 new NullAI(), 
                 true);
-            this.aliveCounter = 120;
+            this.playerShot = playerShot;
+            this.aliveCounter = 180;
         }
 
         /// <summary>
@@ -325,13 +337,18 @@ namespace Adastra
         public Player destPlayer { get; set; }
 
         /// <summary>
+        /// Whether the missile was fired by the player or not.
+        /// </summary>
+        public bool playerShot { get; set; }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="pos">Position of the missile.</param>
         /// <param name="angle">Angle of the missile.</param>
         /// <param name="destEn">The entity that this missile is heading towards. Can be null.</param>
         /// <param name="destPlayer">The player that this missile is heading towards. Can be null.</param>
-        public Missile(Vector2 pos, float angle, Entity destEn = null, Player destPlayer = null)
+        public Missile(Vector2 pos, float angle, bool playerShot, Entity destEn = null, Player destPlayer = null)
         {
             base.Init(
                 Adastra.missileImage,
@@ -344,6 +361,7 @@ namespace Adastra
             this.aliveCounter = 60;
             this.destEn = destEn;
             this.destPlayer = destPlayer;
+            this.playerShot = playerShot;
         }
 
         /// <summary>
@@ -372,7 +390,7 @@ namespace Adastra
                 new Vector2(posX, posY),
                 new Vector2(Adastra.astrImage.Width / 2, Adastra.astrImage.Height / 2),
                 0, 0, 0, 0,
-                100,
+                50,
                 new AsteroidAI(),
                 false);
         }
@@ -500,7 +518,7 @@ namespace Adastra
         public Missile controllerMissile { get; set; }
 
         /// <summary>
-        /// Contstructor.
+        /// Constructor.
         /// </summary>
         public EntityAI()
         {
@@ -569,42 +587,20 @@ namespace Adastra
         {
             int n = r.Next(1, 18);
 
-            if (n == 1)
+            switch(n)
             {
-                this.controller.amountMoveX = 0.25F;
+                case 1: this.controller.amountMoveX = 0.25F; break;
+                case 2: this.controller.amountMoveX = -0.25F; break;
+                case 3: this.controller.amountMoveY = 0.25F; break;
+                case 4: this.controller.amountMoveY = -0.25F; break;
+                case 5: this.controller.amountSpin = 0.002F; break;
+                case 6: this.controller.amountSpin = -0.002F; break;
+                case 7: this.controller.amountMoveX = 0; break;
+                case 8: this.controller.amountMoveY = 0; break;
+                case 9: this.controller.amountSpin = 0; break;
+                default: break;
             }
-            else if (n == 2)
-            {
-                this.controller.amountMoveX = -0.25F;
-            }
-            else if (n == 3)
-            {
-                this.controller.amountMoveY = 0.25F;
-            }
-            else if (n == 4)
-            {
-                this.controller.amountMoveY = -0.25F;
-            }
-            else if (n == 5)
-            {
-                this.controller.amountSpin = 0.002F;
-            }
-            else if (n == 6)
-            {
-                this.controller.amountSpin = -0.002F;
-            }
-            else if (n == 7)
-            {
-                this.controller.amountMoveX = 0;
-            }
-            else if (n == 8)
-            {
-                this.controller.amountMoveY = 0;
-            }
-            else if (n == 9)
-            {
-                this.controller.amountSpin = 0;
-            }
+
             return 0;
         }
     }
@@ -670,7 +666,7 @@ namespace Adastra
                     foreach (Vector2 missileOffset in this.controllerEnemy.ship.missileDisplacements)
                     {
                         Vector2 missilePos = Vector2.Transform(missileOffset, rotation) + this.controller.pos;
-                        Missile missile = new Missile(missilePos, this.controller.angle, null, Adastra.player);
+                        Missile missile = new Missile(missilePos, this.controller.angle, false, null, Adastra.player);
                         missile.AI.controller = missile; missile.AI.controllerMissile = missile;
                         Adastra.theMap.entityList.Add(missile);
                     }
@@ -682,8 +678,8 @@ namespace Adastra
                     foreach (Vector2 shotOffset in this.controllerEnemy.ship.shotDisplacements)
                     {
                         Vector2 shotPos = Vector2.Transform(shotOffset, rotation) + this.controller.pos;
-                        Shot shot = new Shot(shotPos, this.controller.angle);
-                        shot.constantMovement = true; shot.amountMoveY = 16; Adastra.theMap.entityList.Add(shot);
+                        Shot shot = new Shot(shotPos, this.controller.angle, false);
+                        shot.constantMovement = true; shot.amountMoveY = 8; Adastra.theMap.entityList.Add(shot);
                     }
                 }
             }

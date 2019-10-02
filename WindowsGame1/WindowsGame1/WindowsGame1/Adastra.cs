@@ -26,9 +26,6 @@ namespace Adastra
      * coal furnaces chugging away to power the entire mess.
      * 
      * But you would never know, as you only see the swan.
-     * 
-     * 
-     * Point is: I could've coded this much, much better, but who's really going to notice?
     */
 
     /*
@@ -528,6 +525,13 @@ namespace Adastra
             spriteBatch.DrawString(font, player.ship.name, new Vector2(12, 12), Color.White);
             // Money.
             spriteBatch.DrawString(font, player.money.ToString() + " credits", new Vector2(8, 26), Color.White);
+            // Controls.
+            spriteBatch.DrawString(font, "WASD - accelerate", new Vector2(8, 48), Color.White);
+            spriteBatch.DrawString(font, "Shift - decelerate", new Vector2(8, 64), Color.White);
+            spriteBatch.DrawString(font, "M - map", new Vector2(8, 80), Color.White);
+            spriteBatch.DrawString(font, "B - buy (at station)", new Vector2(8, 96), Color.White);
+            spriteBatch.DrawString(font, "Left Click - fire a shot", new Vector2(8, 112), Color.White);
+            if (player.ship is LightCorvette) spriteBatch.DrawString(font, "Right Click - fire a missile", new Vector2(8, 128), Color.White);
 
             // Draw the map overview map's everything.
             if (mapDrawn)
@@ -552,12 +556,32 @@ namespace Adastra
                     }
                 }
                 // Draw the player's position on the overview map using the sameish equation.
-                spriteBatch.Draw(
-                    playerMapPosImg,
-                    new Vector2(
-                        (float)(-playerSpawn.pos.X / 15.6F) + (7200 / 15.6F) + (600 / 15.6F) - (4 / 15.6F) + 150,
-                        (float)(-playerSpawn.pos.Y / 17.3333333F) + (4800 / 17.3333333F) + (400 / 17.3333333F) - (4 / 17.3333333F) + 100),
-                    Color.White);
+                float x = (-playerSpawn.pos.X / 15.6F) + (7200 / 15.6F) + (600 / 15.6F) - (4 / 15.6F) + 150;
+                float y = (-playerSpawn.pos.Y / 17.3333333F) + (4800 / 17.3333333F) + (400 / 17.3333333F) - (4 / 17.3333333F) + 100;
+                if (x > 150 && x < graphics.PreferredBackBufferWidth - 150 && 
+                    y > 100 && y < graphics.PreferredBackBufferHeight - 100)
+                {
+                    // Position and label
+                    spriteBatch.Draw(
+                        playerMapPosImg,
+                        new Vector2(x, y),
+                        Color.White);
+                    spriteBatch.DrawString(
+                        font,
+                        "You are here",
+                        new Vector2(x - 40, y + 10),
+                        Color.Red);
+                }
+                else
+                {
+                    // Only a label in the center of the map
+                    spriteBatch.DrawString(
+                        font,
+                        "You are off the map",
+                        new Vector2(graphics.PreferredBackBufferWidth/2 - 80, graphics.PreferredBackBufferHeight/2 + 50),
+                        Color.Red);
+                }
+                
             }
 
             // Draw the store overlay over everything.
@@ -699,27 +723,39 @@ namespace Adastra
                         player.amountMoveY += currGamePadState.ThumbSticks.Left.Y * player.ship.accelSpeed;
                     }
                 }
-                if (currKeyboardState.IsKeyDown(Keys.A) && player.amountMoveX >= -player.ship.maxSpeed)
+                if (currKeyboardState.IsKeyDown(Keys.A)
+                    && Math.Abs(player.amountMoveX) <= player.ship.maxSpeed
+                    && Math.Abs(player.amountMoveY) <= player.ship.maxSpeed)
                 {
-                    player.amountMoveX -= player.ship.accelSpeed;
+                    player.amountMoveX -= (float)(player.ship.accelSpeed * Math.Sin(player.angle + Math.PI/2f));
+                    player.amountMoveY -= (float)(player.ship.accelSpeed * Math.Cos(player.angle + Math.PI/2f));
                 }
-                if (currKeyboardState.IsKeyDown(Keys.D) && player.amountMoveX <= player.ship.maxSpeed)
+                if (currKeyboardState.IsKeyDown(Keys.D)
+                    && Math.Abs(player.amountMoveX) <= player.ship.maxSpeed
+                    && Math.Abs(player.amountMoveY) <= player.ship.maxSpeed)
                 {
-                    player.amountMoveX += player.ship.accelSpeed;
+                    player.amountMoveX += (float)(player.ship.accelSpeed * Math.Sin(player.angle + Math.PI/2f));
+                    player.amountMoveY += (float)(player.ship.accelSpeed * Math.Cos(player.angle + Math.PI/2f));
                 }
 
                 // If they're holding down W, add some to their move speed.
                 // Again, the player's ship's max's speed's.
-                if (currKeyboardState.IsKeyDown(Keys.W) && player.amountMoveY <= player.ship.maxSpeed || currGamePadState.IsConnected &&
-                    currGamePadState.ThumbSticks.Left.Y == 1.0F && player.amountMoveY <= player.ship.maxSpeed)
+                if (currKeyboardState.IsKeyDown(Keys.W) 
+                    && Math.Abs(player.amountMoveX) <= player.ship.maxSpeed 
+                    && Math.Abs(player.amountMoveY) <= player.ship.maxSpeed
+                    || (currGamePadState.IsConnected && currGamePadState.ThumbSticks.Left.Y == 1.0F))
                 {
-                    player.amountMoveY += player.ship.accelSpeed;
+                    player.amountMoveX += (float)(player.ship.accelSpeed * Math.Sin(player.angle));
+                    player.amountMoveY += (float)(player.ship.accelSpeed * Math.Cos(player.angle));
                 }
                 // Same for S only decrement the speed.
-                if (currKeyboardState.IsKeyDown(Keys.S) && player.amountMoveY >= -11 || currGamePadState.IsConnected &&
-                    currGamePadState.ThumbSticks.Left.Y == -1.0F && player.amountMoveY >= -11)
+                if (currKeyboardState.IsKeyDown(Keys.S)
+                    && Math.Abs(player.amountMoveX) <= player.ship.maxSpeed
+                    && Math.Abs(player.amountMoveY) <= player.ship.maxSpeed
+                    || (currGamePadState.IsConnected && currGamePadState.ThumbSticks.Left.Y == -1.0F ))
                 {
-                    player.amountMoveY -= player.ship.accelSpeed;
+                    player.amountMoveX -= (float)(player.ship.accelSpeed * Math.Sin(player.angle));
+                    player.amountMoveY -= (float)(player.ship.accelSpeed * Math.Cos(player.angle));
                 }
 
                 // If the player is holding down leftshift (or B on the gamepad), slow down the ship.
@@ -744,11 +780,23 @@ namespace Adastra
                     }
                 }
 
+                // Reset speeds if they are too fast
+                player.amountMoveX = (Math.Abs(player.amountMoveX) >= player.ship.maxSpeed)
+                    ? ((player.amountMoveX > 0) ? 1 : -1) * player.ship.maxSpeed
+                    : player.amountMoveX;
+                player.amountMoveY = (Math.Abs(player.amountMoveY) >= player.ship.maxSpeed)
+                    ? ((player.amountMoveY > 0) ? 1 : -1) * player.ship.maxSpeed
+                    : player.amountMoveY;
+
                 // Shoot two shots if the left mouse button (right trigger) was just pressed.
-                if (currMouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released ||
-                    currGamePadState.IsConnected && currGamePadState.IsButtonDown(Buttons.RightTrigger) &&
-                    prevGamePadState.IsButtonUp(Buttons.RightTrigger))
+                if (currMouseState.LeftButton == ButtonState.Pressed /*&& prevMouseState.LeftButton == ButtonState.Released*/ 
+                    && player.cooldown <= 0
+                    || (currGamePadState.IsConnected && currGamePadState.IsButtonDown(Buttons.RightTrigger) &&
+                    prevGamePadState.IsButtonUp(Buttons.RightTrigger)))
                 {
+                    // Reset their shot cooldown
+                    player.cooldown = 20;
+
                     // Good luck.
                     // Props to Christian for suggesting randomish shots.
                     Random rand = new Random();
@@ -758,16 +806,20 @@ namespace Adastra
                     foreach (Vector2 shotOffset in player.ship.shotDisplacements)
                     {
                         Vector2 shotPos = Vector2.Transform(shotOffset, rotation) + Player.pos;
-                        Shot shot = new Shot(shotPos, player.angle + randAngle);
-                        shot.constantMovement = true; shot.amountMoveY = 16; theMap.entityList.Add(shot);
+                        Shot shot = new Shot(shotPos, player.angle + randAngle, true);
+                        shot.constantMovement = true; shot.amountMoveY = 8; theMap.entityList.Add(shot);
                     }
+                }
+                // Decrement the cooldown every tick when not shooting
+                else if (player.cooldown > 0)
+                {
+                    player.cooldown -= 1;
                 }
 
                 // Shoot a missile if the player's ship can fire them, and if they've right clicked (left trigger).
-                if (player.ship.missileDisplacements != null && (currMouseState.RightButton == ButtonState.Pressed &&
-                    prevMouseState.RightButton == ButtonState.Released || currGamePadState.IsConnected &&
-                    currGamePadState.IsButtonDown(Buttons.LeftTrigger) && prevGamePadState.IsButtonUp(Buttons.LeftTrigger))
-                    && canFireMissile)
+                if (player.ship.missileDisplacements != null && canFireMissile
+                    && (currMouseState.RightButton == ButtonState.Pressed && prevMouseState.RightButton == ButtonState.Released 
+                    || (currGamePadState.IsConnected && currGamePadState.IsButtonDown(Buttons.LeftTrigger) && prevGamePadState.IsButtonUp(Buttons.LeftTrigger))))
                 {
                     // More good luck to you.
                     Quaternion rotation = Quaternion.CreateFromAxisAngle(Vector3.Backward, player.angle);
@@ -784,7 +836,7 @@ namespace Adastra
                     foreach (Vector2 missileOffset in player.ship.missileDisplacements)
                     {
                         Vector2 missilePos = Vector2.Transform(missileOffset, rotation) + Player.pos;
-                        Missile missile = new Missile(missilePos, player.angle, destEn);
+                        Missile missile = new Missile(missilePos, player.angle, true, destEn);
                         missile.constantMovement = true; missile.AI.controller = missile;
                         missile.AI.controllerMissile = missile; theMap.entityList.Add(missile);
                     }
@@ -900,19 +952,23 @@ namespace Adastra
             // the opposite direction, to make the screen seem to follow the player.
             foreach (Entity en in theMap.entityList)
             {
-                en.pos = new Vector2(en.pos.X - (float)(Math.Sin(player.angle) * player.amountMoveY),
+                /*en.pos = new Vector2(en.pos.X - (float)(Math.Sin(player.angle) * player.amountMoveY),
                                      en.pos.Y + (float)(Math.Cos(player.angle) * player.amountMoveY));
                 en.pos = new Vector2(en.pos.X - (float)(Math.Sin(player.angle + Math.PI / 2) * player.amountMoveX),
-                                     en.pos.Y + (float)(Math.Cos(player.angle + Math.PI / 2) * player.amountMoveX));
+                                     en.pos.Y + (float)(Math.Cos(player.angle + Math.PI / 2) * player.amountMoveX));*/
+                en.pos = new Vector2(en.pos.X - player.amountMoveX,
+                                     en.pos.Y + player.amountMoveY);
             }
 
             // Then move the backgrounds.
             foreach (BackgroundTile bg in theMap.backgroundList)
             {
-                bg.pos = new Vector2(bg.pos.X - (float)(Math.Sin(player.angle) * player.amountMoveY / 4),
+                /*bg.pos = new Vector2(bg.pos.X - (float)(Math.Sin(player.angle) * player.amountMoveY / 4),
                                      bg.pos.Y + (float)(Math.Cos(player.angle) * player.amountMoveY / 4));
                 bg.pos = new Vector2(bg.pos.X - (float)(Math.Sin(player.angle + Math.PI / 2) * player.amountMoveX / 4),
-                                     bg.pos.Y + (float)(Math.Cos(player.angle + Math.PI / 2) * player.amountMoveX / 4));
+                                     bg.pos.Y + (float)(Math.Cos(player.angle + Math.PI / 2) * player.amountMoveX / 4));*/
+                bg.pos = new Vector2(bg.pos.X - player.amountMoveX / 4f,
+                                     bg.pos.Y + player.amountMoveY / 4f);
             }
 
             // Update all of the entities.
@@ -971,13 +1027,33 @@ namespace Adastra
                 // colliding is set to true.
                 if (Math.Abs(Vector2.Distance(theMap.entityList[i].pos, Player.pos)) <= player.ship.radius + theMap.entityList[i].radius)
                 {
-                    if (theMap.entityList[i].GetType() == typeof(Shot)
-                     || theMap.entityList[i].GetType() == typeof(Asteroid)
-                     || theMap.entityList[i].GetType() == typeof(Missile))
-                    { // ^ player only collides with shots, asteroids, and missiles.
-                        colliding = true;
-                        player.ship.health -= 10;
+                    colliding = true;
+                    int damage = 0;
+                    switch(theMap.entityList[i])
+                    {
+                        case Shot s:
+                            if (s.playerShot)
+                            {
+                                colliding = false;
+                                damage = 0;
+                            }
+                            else damage = 5;
+                            break;
+                        case Asteroid a:
+                            damage = 1; break;
+                        case Missile m:
+                            if (m.playerShot)
+                            {
+                                colliding = false;
+                                damage = 0;
+                            }
+                            else damage = 12;
+                            break;
+                        default:
+                            break;
                     }
+                    
+                    player.ship.health -= damage;
                 }
 
                 // Move the entity, if it's AI has chosen to do so.
@@ -1051,17 +1127,21 @@ namespace Adastra
                         // Enemies. 2nd line determines the enemy's ship. 3rd and 4th are x/y.
                         else if (line[0] == "Enemy")
                         {
-                            Ship ship = new LightCruiser();
-                            if (line[1] == "LightCorvette")
-                                ship = new LightCorvette();
-                            if (line[1] == "LightFrigate")
-                                ship = new LightFrigate();
+                            Ship ship;
+                            switch(line[1])
+                            {
+                                case "LightCruiser": ship = new LightCruiser(); break;
+                                case "LightCorvette": ship = new LightCorvette(); break;
+                                case "LightFrigate": ship = new LightFrigate(); break;
+                                default: ship = new LightCruiser(); break;
+                            }
 
                             Enemy tempEnemy = new Enemy(
                                 ship,
                                 new Vector2(System.Convert.ToInt32(line[2]), System.Convert.ToInt32(line[3])),
                                 ship.maxHealth,
-                                new EnemyAI()); tempEnemy.AI.controller = tempEnemy; tempEnemy.AI.controllerEnemy = tempEnemy;
+                                new EnemyAI());
+                            tempEnemy.AI.controller = tempEnemy; tempEnemy.AI.controllerEnemy = tempEnemy;
 
                             theMap.addEntity(tempEnemy);
                         }
